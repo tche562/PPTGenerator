@@ -13,6 +13,8 @@
     <!-- Office JavaScript API -->
     <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.7.1/jszip.min.js"></script>
+
     <!-- For more information on Fluent UI, visit https://developer.microsoft.com/fluentui#/. -->
     <link rel="stylesheet" href="https://res-1.cdn.office.net/files/fabric-cdn-prod_20230815.002/office-ui-fabric-core/11.1.0/css/fabric.min.css"/>
 
@@ -23,27 +25,15 @@
 <body class="ms-font-m ms-welcome ms-Fabric">
     <header class="ms-welcome__header ms-bgColor-neutralLighter">
         <img width="90" height="90" src="../../assets/logo-filled.png" alt="Contoso" title="Contoso" />
-        <h1 class="ms-font-su">Welcome</h1>
+        <h1 class="ms-font-su">PDF Case Study</h1>
     </header>
     <section id="sideload-msg" class="ms-welcome__main">
         <h2 class="ms-font-xl">Please <a target="_blank" href="https://learn.microsoft.com/office/dev/add-ins/testing/test-debug-office-add-ins#sideload-an-office-add-in-for-testing">sideload</a> your add-in to see app body.</h2>
     </section>
     <main id="app-body" class="ms-welcome__main" style="display: none;">
-        <h2 class="ms-font-xl"> Discover what Office Add-ins can do for you today! </h2>
-        <ul class="ms-List ms-welcome__features">
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Ribbon ms-font-xl"></i>
-                <span class="ms-font-m">Achieve more with Office integration</span>
-            </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Unlock ms-font-xl"></i>
-                <span class="ms-font-m">Unlock features and functionality</span>
-            </li>
-            <li class="ms-ListItem">
-                <i class="ms-Icon ms-Icon--Design ms-font-xl"></i>
-                <span class="ms-font-m">Create and visualize like a pro</span>
-            </li>
-        </ul>
+        <input type="file" id="uploadPptx" accept=".pptx" />
+        <button class="ms-Button" id="handle-file-upload"> Handle uploaded PPT</button><br /><br />
+        <!-- <button class="ms-Button" id="Convert-to-XML"> Convert PPT to XML</button><br /><br /> -->
         <p class="ms-font-l">Modify the source files, then click <b>Run</b>.</p>
         <div role="button" id="run" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
             <span class="ms-Button-label">Run</span>
